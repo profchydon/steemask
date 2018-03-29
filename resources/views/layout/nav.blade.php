@@ -11,7 +11,7 @@
     <li>Steem Dollar : $2.03</li>
     <li>EOS : $2.03</li>
     <li>Steem : $2.03</li>
-  
+
 
 
   </ul>
@@ -56,19 +56,19 @@
 
   <ul style="margin-right: 0px;" class="nav navbar-nav">
 
-    <li>Trending</li>
-    <li>Hot</li>
-    <li>New</li>
-    <li>Promoted</li>
+    <li> <a href="http://signup.steemit.com" class="signup-a">Trending</a> </li>
+    <li> <a href="http://signup.steemit.com" class="signup-a">Hot</a> </li>
+    <li> <a href="http://signup.steemit.com" class="signup-a">New</a> </li>
+    <li> <a href="http://signup.steemit.com" class="signup-a">Promoted</a> </li>
 
   </ul>
 
   <ul style="margin-right: 0px;" class="nav navbar-nav navbar-right">
 
-    <li>Marketplace</li>
-    <li>Check Payout</li>
-    <li>New</li>
-    <li>Promoted</li>
+    <li> <a href="http://signup.steemit.com" class="signup-a">Marketplace</a> </li>
+    <li> <a href="http://signup.steemit.com" class="signup-a">Check Payout</a> </li>
+    <li> <a href="http://signup.steemit.com" class="signup-a">Login</a> </li>
+    <li> <a href="http://signup.steemit.com" class="signup-a">Register</a> </li>
 
   </ul>
 

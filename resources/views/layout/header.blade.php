@@ -17,12 +17,14 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
     <!-- Custom styles for this template -->
     <link href="/css/style.css" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
     <!-- <link href="https://fonts.googleapis.com/css?family=Domine" rel="stylesheet"> -->
 
