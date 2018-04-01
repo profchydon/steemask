@@ -1,0 +1,19 @@
+[
+    {
+        "id": "steem", 
+        "name": "Steem", 
+        "symbol": "STEEM", 
+        "rank": "31", 
+        "price_usd": "1.68344", 
+        "price_btc": "0.00023368", 
+        "24h_volume_usd": "2239270.0", 
+        "market_cap_usd": "430314950.0", 
+        "available_supply": "255616446.0", 
+        "total_supply": "272590540.0", 
+        "max_supply": null, 
+        "percent_change_1h": "2.67", 
+        "percent_change_24h": "-11.67", 
+        "percent_change_7d": "-18.72", 
+        "last_updated": "1522364947"
+    }
+]

@@ -1,7 +1,7 @@
     <section class="col-md-9">
 
       <article class="question question-type-normal">
-        <h2 class="">
+        <h2 class="quest-h2">
             <a href="" class="question-a">Steem Power: What is the essence of powering up</a>
         </h2>
 

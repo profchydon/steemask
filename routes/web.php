@@ -11,4 +11,7 @@
 |
 */
 
-Route::get('/', 'PagesController@home');
+
+Route::get('/', 'CoinmarketcapController@getAllCoinDetails');
+
+Route::get('/steem', 'CoinmarketcapController@getSteem');
