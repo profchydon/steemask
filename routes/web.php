@@ -14,4 +14,4 @@
 
 Route::get('/', 'CoinmarketcapController@getAllCoinDetails');
 
-Route::get('/steem', 'CoinmarketcapController@getSteem');
+Route::get('/steem', 'CoinmarketcapController@writeMarketCapToFile');

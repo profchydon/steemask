@@ -1,17 +1,16 @@
+
 <div class="fixed-tab">
 
   <ul style="margin-right: 0px;" class="nav navbar-nav navbar-right">
 
     <li>Market Capitalization : $265,685,696.03</li>
-    <li>Bitcoin : $2.03</li>
-    <li>Steem : $2.03</li>
-    <li>Steem Dollar : $2.03</li>
-    <li>EOS : $2.03</li>
-    <li>Steem : $2.03</li>
-    <li>Steem Dollar : $2.03</li>
-    <li>EOS : $2.03</li>
-    <li>Steem : $2.03</li>
-
+    <li>{{ $bitcoin['name'] }} : ${{ $bitcoin['price_usd'] }}</li>
+    <li>{{ $eth['name'] }} : ${{ $eth['price_usd'] }}</li>
+    <li>{{ $steem['name'] }} : ${{ $steem['price_usd'] }}</li>
+    <li>{{ $sbd['name'] }} : ${{ $sbd['price_usd'] }}</li>
+    <li>{{ $eos['name'] }} : ${{ $eos['price_usd'] }}</li>
+    <li>{{ $golos['name'] }} : ${{ $golos['price_usd'] }}</li>
+    
   </ul>
 
 </div>
@@ -31,7 +30,7 @@
         <a href="#" class="navbar-brand">
 
           <!-- <img src="" class="img-responsive logo" alt="SteemAnswer"> -->
-          <h4 class="navbar-text-logo">steemAnswer</h4>
+          <h4 class="navbar-text-logo">SteemAsk</h4>
 
         </a>
 
@@ -71,5 +70,3 @@
   </ul>
 
 </div>
-
-<!-- {{ $steem }} -->

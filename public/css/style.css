@@ -79,9 +79,9 @@ a.signup-a {
 }
 
 .ask {
-    color: #337ab7;
+    color: #fff;
     text-decoration: none;
-    /* background: #032c3e; */
+    background: #337ab7;
     padding: 17px;
     margin-top: 4px;
     display: block;
