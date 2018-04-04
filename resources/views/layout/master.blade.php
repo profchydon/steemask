@@ -4,4 +4,5 @@
 
 @yield('content')
 
+@include('layout.modal.login')
 @include('layout.footer')

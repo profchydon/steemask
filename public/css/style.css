@@ -157,6 +157,23 @@ img.profile-img-dashboard.img-responsive {
     margin-right: 10px;
 }
 
+img.avatar.img-responsive {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    display: inline !important;
+    border-radius: 50%;
+    margin-right: 10px;
+    float: left;
+}
+
+h5.welcome {
+    color: #fff;
+    font-weight: 600;
+    float: left;
+    margin: 12px 0px;
+}
+
 .other-block {
     margin-left: 62px;
     /* display: inline; */

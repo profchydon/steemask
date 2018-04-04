@@ -15,3 +15,5 @@
 Route::get('/', 'CoinmarketcapController@getAllCoinDetails');
 
 Route::get('/steem', 'CoinmarketcapController@writeMarketCapToFile');
+
+Route::get('/callback', 'UsersController@loginViaSteemConnect');

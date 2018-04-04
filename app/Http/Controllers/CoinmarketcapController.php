@@ -154,7 +154,7 @@ class CoinmarketcapController extends Controller
 
         return view ('home' , $coin);
 
-    }
 
+    }
 
 }
