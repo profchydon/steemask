@@ -6,14 +6,15 @@
   <div class="quest-of-the-day">
 
       <h5 class="q-title">Trending</h5>
-        <hr>
+
+      <hr>
 
       <p>
-          What is the essence of powering up?
+          I forgot my password. Please how can i recover it?
       </p>
 
       <p class="user-ask pull-right">
-          - mathemandy
+          - nonij
       </p>
 
       <hr>
@@ -25,17 +26,6 @@
       <p class="user-ask pull-right">
           - mathemandy
       </p>
-
-      <hr>
-      <p>
-          What is the essence of powering up?
-      </p>
-
-      <p class="user-ask pull-right">
-          - mathemandy
-      </p>
-
-      <hr>
 
   </div>
 

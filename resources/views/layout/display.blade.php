@@ -13,8 +13,8 @@
             </p>
 
             <div class="">
-                <img src="/img/me.jpg" alt="profile-img" class="profile-img-dashboard img-responsive">
-                <h4 class="username-dashboard">profchydon</h4>
+                <img src="https://steemitimages.com/u/mathemandy/avatar" alt="profile-img" class="profile-img-dashboard img-responsive">
+                <h4 class="username-dashboard">mathemandy</h4>
                 <h5 class="time-dashboard"> -  12 hours ago</h5>
                 <h5 class="comment-count"><i class="fa fa-comment" aria-hidden="true"></i> 12</h5>
 
@@ -23,7 +23,7 @@
                 <h5 class="payout-dashboard"> $20.34</h5>
 
                 <div class="tags-block pull-right">
-                  <a href="#" class="tags">STEEMANSWER</a>
+                  <a href="#" class="tags">STEEMANSK</a>
                   <a href="#" class="tags">PAYOUT</a>
                   <a href="#" class="tags">STEEMIT</a>
 
@@ -49,8 +49,8 @@
            </p>
 
            <div class="">
-               <img src="/img/me.jpg" alt="profile-img" class="profile-img-dashboard img-responsive">
-               <h4 class="username-dashboard">dennislei</h4>
+             <img src="https://steemitimages.com/u/kristenantai01/avatar" alt="profile-img" class="profile-img-dashboard img-responsive">
+             <h4 class="username-dashboard">kristenantai01</h4>
                <h5 class="time-dashboard"> -  1 hours ago</h5>
                <h5 class="comment-count"><i class="fa fa-comment" aria-hidden="true"></i> 88</h5>
 
@@ -59,7 +59,7 @@
                <h5 class="payout-dashboard"> $20.34</h5>
 
                <div class="tags-block pull-right">
-                 <a href="#" class="tags">STEEMANSWER</a>
+                 <a href="#" class="tags">STEEMANSK</a>
                  <a href="#" class="tags">PAYOUT</a>
                  <a href="#" class="tags">STEEMIT</a>
 

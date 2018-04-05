@@ -74,9 +74,9 @@
   <ul style="margin-right: 0px;" class="nav navbar-nav">
 
     <li> <a href="http://signup.steemit.com" class="signup-a">Trending</a> </li>
-    <li> <a href="http://signup.steemit.com" class="signup-a">Hot</a> </li>
     <li> <a href="http://signup.steemit.com" class="signup-a">New</a> </li>
-    <li> <a href="http://signup.steemit.com" class="signup-a">Promoted</a> </li>
+    <li> <a href="http://signup.steemit.com" class="signup-a">Category</a> </li>
+    <li> <a href="http://signup.steemit.com" class="signup-a">Unaswered</a> </li>
 
   </ul>
 
