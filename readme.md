@@ -14,12 +14,25 @@
 SteemAsk : is a decentralized question and answer forum built on the steem blockchain that provides the required platform much like a stackoverflow for users to ask question and get replies from other users. Questions and comments can receive upvotes from curators as it is on steemit.
 
 
+## Installation
+This project can be easily installed on your local machine. Just follow these steps
+1. Clone the repo to your machine
+2. Start your server using php artisan server
+3. visit localhost:8000
+
+## Contributors
+You think this is a good project and want to see it completed quickly or there are some features you feel like adding, then you are welcome to contribute.
+Simply
+* `fork` this repo
+* Add your contributions
+* Submit a pull request
+
+You can also contact me via profchydon@gmail.com
 
 
+## MIT Lincense
 
-### MIT Lincense
-
-Copyright (c) [2018]  Chidi Nkwocha 
+Copyright (c) [2018]  Chidi Nkwocha
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
