@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     //
-    public function home ()
+    public function profile ()
     {
-      return view ('home');
+      return view ('pages.profile');
     }
 }

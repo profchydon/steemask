@@ -1,12 +1,3 @@
-<?php
-
-    $profile = json_decode($user['account']['json_metadata'] , TRUE);
-
-    $profile_image = $profile['profile']['profile_image'];
-
-    $avatar = "https://steemitimages.com/u/".$user['account']['name']."/avatar";
-
- ?>
 
 <div class="fixed-tab">
 
@@ -14,7 +5,7 @@
 
     @if (isset($coinmarketcap))
 
-        <li>Market Capitalization : $265,685,696.03</li>
+        <li>Market Capitalization : ${{ $coinmarketcap['marketcap']['total_market_cap_usd']  }}</li>
         <li>{{ $coinmarketcap['bitcoin']['name'] }} : ${{ $coinmarketcap['bitcoin']['price_usd']  }}</li>
         <li>{{ $coinmarketcap['eth']['name'] }} : ${{ $coinmarketcap['eth']['price_usd']  }}</li>
         <li>{{ $coinmarketcap['steem']['name'] }} : ${{ $coinmarketcap['steem']['price_usd']  }}</li>
@@ -63,11 +54,11 @@
 
           <ul style="margin-right: 0px;" class="nav navbar-nav navbar-right">
 
-            @if (isset($user))
+            @if (isset($_SESSION['username']))
 
-                <img src= {{ $avatar }} alt="" class="avatar img-responsive">
+                <img src= {{ $_SESSION['avatar'] }} alt="" class="avatar img-responsive">
 
-                <h5 class="welcome"> {{ $user['account']['name'] }}</h5>
+                <h5 class="welcome"> {{ $_SESSION['username'] }}</h5>
 
             @endif
 
@@ -93,8 +84,18 @@
 
     <li> <a href="http://signup.steemit.com" class="signup-a">Marketplace</a> </li>
     <li> <a href="http://signup.steemit.com" class="signup-a">Check Payout</a> </li>
+
+    @if (isset($_SESSION['username']))
+
+      <li> <a href="/profile" class="signup-a">Profile</a> </li>
+
+    @else
+
     <li> <a href="https://v2.steemconnect.com/oauth2/authorize?client_id=steemask.app&redirect_uri=http://localhost:8000/callback&scope=login,vote,comment,comment_delete,comment_options,custom_json,claim_reward_balance,offline" class="signup-a">Login</a> </li>
+
     <li> <a href="http://signup.steemit.com" class="signup-a">Register</a> </li>
+
+    @endif
 
   </ul>
 

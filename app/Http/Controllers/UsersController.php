@@ -28,6 +28,13 @@ class UsersController extends Controller
 
         $data['coinmarketcap'] = $this->coinmarketcap->getAllCoinDetails();
 
+        $_SESSION['username'] = $data['user']['user'];
+        $_SESSION['avatar'] = "https://steemitimages.com/u/".$data['user']['user']."/avatar";
+
+        // echo "<pre>";
+        // var_dump($data['user']);
+        // dd();
+
         return view ('home' , $data);
 
     }

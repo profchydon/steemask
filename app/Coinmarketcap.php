@@ -23,6 +23,13 @@ class Coinmarketcap extends Model
     }
 
     // Get Steem details
+    public function getBitcoinDetails ()
+    {
+      $bitcoin = file_get_contents('https://api.coinmarketcap.com/v1/ticker/bitcoin/');
+      return $bitcoin;
+    }
+
+    // Get Steem details
     public function getEthDetails ()
     {
       $eth = file_get_contents('https://api.coinmarketcap.com/v1/ticker/ethereum/');

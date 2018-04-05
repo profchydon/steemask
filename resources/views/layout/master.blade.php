@@ -1,3 +1,4 @@
+@include('layout._session')
 @include('layout.header')
 
 @include('layout.nav')
