@@ -21,7 +21,27 @@ class UsersController extends Controller
         $this->user = $user;
     }
 
-    
+    public function loginViaSteemConnect ()
+    {
+
+        $data['user'] = $this->user->steemConnect();
+
+        $data['coinmarketcap'] = $this->coinmarketcap->getAllCoinDetails();
+
+        $_SESSION['username'] = $data['user']['user'];
+        $profile = $data['user']['account']['json_metadata'];
+        $profile = json_decode($profile, TRUE);
+
+        $_SESSION['about'] = $profile['profile']['about'];
+        $_SESSION['location'] = $profile['profile']['location'];
+        $_SESSION['website'] = $profile['profile']['website'];
+        $_SESSION['avatar'] = "https://steemitimages.com/u/".$data['user']['user']."/avatar";
+
+
+
+        return view ('home' , $data);
+
+    }
 
     public function logout ()
     {
