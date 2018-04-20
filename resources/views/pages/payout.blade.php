@@ -7,8 +7,7 @@
 
   <div class="row home-row">
 
-      @include('layout.profile')
-      @include('layout.side')
+      @include('layout.payout')
 
   </div><!-- /.row -->
 

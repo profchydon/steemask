@@ -13,9 +13,10 @@
 
 
 Route::get('/', 'CoinmarketcapController@getAllCoinDetails');
-
-Route::get('/profile', 'PagesController@profile');
-
 Route::get('/steem', 'CoinmarketcapController@writeMarketCapToFile');
 
+
+Route::get('/profile', 'UsersController@profile');
+Route::get('/payout', 'UsersController@payout');
+Route::get('/logout', 'UsersController@logout');
 Route::get('/callback', 'UsersController@loginViaSteemConnect');

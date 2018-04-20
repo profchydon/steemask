@@ -41,7 +41,7 @@
         <span class="icon-bar"></span>
       </button>
 
-        <a href="#" class="navbar-brand">
+        <a href="/" class="navbar-brand">
 
           <!-- <img src="" class="img-responsive logo" alt="SteemAnswer"> -->
           <h4 class="navbar-text-logo">SteemAsk</h4>
@@ -59,6 +59,7 @@
                 <img src= {{ $_SESSION['avatar'] }} alt="" class="avatar img-responsive">
 
                 <h5 class="welcome"> {{ $_SESSION['username'] }}</h5>
+
 
             @endif
 
@@ -83,11 +84,12 @@
   <ul style="margin-right: 0px;" class="nav navbar-nav navbar-right">
 
     <li> <a href="http://signup.steemit.com" class="signup-a">Marketplace</a> </li>
-    <li> <a href="http://signup.steemit.com" class="signup-a">Check Payout</a> </li>
 
     @if (isset($_SESSION['username']))
 
+      <li> <a href="/payout" class="signup-a">Check Payout</a> </li>
       <li> <a href="/profile" class="signup-a">Profile</a> </li>
+      <li> <a href="/logout" class="signup-a">Logout</a> </li>
 
     @else
 

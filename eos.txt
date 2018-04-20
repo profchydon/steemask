@@ -3,17 +3,17 @@
         "id": "eos", 
         "name": "EOS", 
         "symbol": "EOS", 
-        "rank": "6", 
-        "price_usd": "5.64078", 
-        "price_btc": "0.00082955", 
-        "24h_volume_usd": "290007000.0", 
-        "market_cap_usd": "4356576594.0", 
-        "available_supply": "772335846.0", 
+        "rank": "5", 
+        "price_usd": "11.1285", 
+        "price_btc": "0.00131236", 
+        "24h_volume_usd": "1221010000.0", 
+        "market_cap_usd": "8958209965.0", 
+        "available_supply": "804979105.0", 
         "total_supply": "900000000.0", 
         "max_supply": "1000000000.0", 
-        "percent_change_1h": "-0.93", 
-        "percent_change_24h": "-5.92", 
-        "percent_change_7d": "-7.11", 
-        "last_updated": "1522914251"
+        "percent_change_1h": "-0.5", 
+        "percent_change_24h": "19.16", 
+        "percent_change_7d": "23.93", 
+        "last_updated": "1524247453"
     }
 ]

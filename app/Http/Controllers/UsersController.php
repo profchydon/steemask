@@ -29,16 +29,47 @@ class UsersController extends Controller
         $data['coinmarketcap'] = $this->coinmarketcap->getAllCoinDetails();
 
         $_SESSION['username'] = $data['user']['user'];
+        $profile = $data['user']['account']['json_metadata'];
+        $profile = json_decode($profile, TRUE);
+        
+        $_SESSION['about'] = $profile['profile']['about'];
+        $_SESSION['location'] = $profile['profile']['location'];
+        $_SESSION['website'] = $profile['profile']['website'];
         $_SESSION['avatar'] = "https://steemitimages.com/u/".$data['user']['user']."/avatar";
 
-        // echo "<pre>";
-        // var_dump($data['user']);
-        // dd();
+
 
         return view ('home' , $data);
 
     }
 
+    public function logout ()
+    {
 
+        session_start();
+        session_destroy();
+
+        return redirect('/');
+
+    }
+
+    public function payout ()
+    {
+
+      if (session_status () == PHP_SESSION_NONE) {
+         session_start();
+      }
+
+      $username = $_SESSION['username'];
+
+      $data['coinmarketcap'] = $this->coinmarketcap->getAllCoinDetails();
+      $data['profile'] = $this->user->getUserBlogData($username);
+      // echo "<pre>";
+      // var_dump($data['profile']);
+      // dd();
+
+      return view ('pages.payout' , $data);
+
+    }
 
 }

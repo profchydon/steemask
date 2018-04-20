@@ -1,4 +1,4 @@
-<!-- @include('data.currencies') -->
+
 @extends('layout.master')
 
 @section('content')

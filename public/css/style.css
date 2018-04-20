@@ -6,6 +6,14 @@ body {
 
 }
 
+section.col-md-12.question.question-type-normal {
+    padding: 40px;
+}
+
+table.table.table-striped.table-responsive {
+    margin: 30px 0px;
+}
+
 .question {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;

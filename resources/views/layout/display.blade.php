@@ -39,7 +39,7 @@
 
      <article class="question question-type-normal">
        <h2 class="">
-           <a href="" class="question-a">Account Sign Up: My steemit registration hasn't been completed</a>
+           <a href="" class="question-a">Post Payout: My post payout keeps decreasing by the day.</a>
        </h2>
 
        <div class="question-inner">
