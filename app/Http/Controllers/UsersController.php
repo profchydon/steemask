@@ -21,6 +21,8 @@ class UsersController extends Controller
         $this->user = $user;
     }
 
+    
+
     public function logout ()
     {
 
