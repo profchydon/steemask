@@ -1,0 +1,33 @@
+The Steem blockchain is a beautiful plaftorm, and we have decided to add to it's development by coming up with SteemAsk
+
+![steemask.png](https://steemitimages.com/DQmPkWZEmh6yhEhYgJji2ZsFbphE3e3TQQ2jRVAiD58gyow/steemask.png)
+
+How SteemAsk came to be:
+We thought of the need for a platform which offers new and old steemians a place to assist each on Steem and Non-Steem related issues.
+By asking questions and getting quick reply. And SteemAsk came into life.
+
+Development Details:
+SteemAsk is a decentralized question and answer website,it's the stackoverflow of the Steem blockchain.
+It's website is built on PHP Laravel 5.5 Framework.
+
+Summary of the unique features offered by SteemAsk to Steemians:
+
+* Steemians (Newbies) can get to ask important question, and get quality answer from other Steemians. 
+
+* Users can search for questions and get quick answer.
+
+* Users have a platform to answer questions by other steemians. 
+
+* Users can upvote questions and answers they find very helpful.
+
+* Users can check their payout and for any other account.
+
+* Market section for Steem and SBD.
+
+For questions, you can check out the FAQ section. 
+
+Enjoy our unique features and browisng through our website.
+
+Contact us via the following :
+On Discord : profchydon#3371
+Github : https://github.com/profchydon/steemask
