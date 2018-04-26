@@ -93,7 +93,7 @@
 
     @else
 
-    <li> <a href="https://v2.steemconnect.com/oauth2/authorize?client_id=steemask.app&redirect_uri=http://localhost:8000/callback&scope=login,vote,comment,comment_delete,comment_options,custom_json,claim_reward_balance,offline" class="signup-a">Login</a> </li>
+    <li> <a href="https://v2.steemconnect.com/oauth2/authorize?client_id=steemask.app&redirect_uri=http://localhost:8000/callback&scope=login,vote,comment,delete_comment,comment_options,custom_json,claim_reward_balance,offline" class="signup-a">Login</a> </li>
 
     <li> <a href="http://signup.steemit.com" class="signup-a">Register</a> </li>
 

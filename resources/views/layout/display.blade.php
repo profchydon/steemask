@@ -1,4 +1,3 @@
-
     <section class="col-md-9">
 
       <article class="question question-type-normal">
@@ -106,6 +105,18 @@
       </div>
 
    </article>
+
+   <!-- <form class="form-group">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input name="title" class="form-control" type="text" placeholder="Title?" />
+    </div>
+    <div class="form-group">
+      <textarea name="content" class="form-control" data-provide="markdown" rows="10"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form> -->
 
 
     </section>

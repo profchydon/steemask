@@ -37,8 +37,6 @@ class UsersController extends Controller
         $_SESSION['website'] = $profile['profile']['website'];
         $_SESSION['avatar'] = "https://steemitimages.com/u/".$data['user']['user']."/avatar";
 
-
-
         return view ('home' , $data);
 
     }
@@ -64,8 +62,10 @@ class UsersController extends Controller
 
       $data['coinmarketcap'] = $this->coinmarketcap->getAllCoinDetails();
       $data['profile'] = $this->user->getUserBlogData($username);
+      $data['comment'] = $this->user->getUserCommentData($username);
+
       // echo "<pre>";
-      // var_dump($data['profile']);
+      // var_dump($data['comment']);
       // dd();
 
       return view ('pages.payout' , $data);

@@ -6,6 +6,23 @@ body {
 
 }
 
+.tabs {
+    font-size: 18px;
+    text-align: center;
+}
+
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings' !important;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 section.col-md-12.question.question-type-normal {
     padding: 40px;
 }
