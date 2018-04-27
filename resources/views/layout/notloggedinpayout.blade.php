@@ -6,7 +6,7 @@
 
     foreach ($profile as $key => $post_data) {
 
-       if( !($post_data["pending_payout_value"] == "0.000 SBD") && $_SESSION['username'] == $post_data["author"] ) {
+       if( !($post_data["pending_payout_value"] == "0.000 SBD") ) {
 
          $price = str_replace(" SBD", "", $post_data["pending_payout_value"]);
 
@@ -35,7 +35,7 @@
 
      foreach ($comment as $key => $comment_data) {
 
-        if( !($comment_data["pending_payout_value"] == "0.000 SBD") && $_SESSION['username'] == $comment_data["author"] ) {
+        if( !($comment_data["pending_payout_value"] == "0.000 SBD")) {
 
           $price_comment = str_replace(" SBD", "", $comment_data["pending_payout_value"]);
 
@@ -59,8 +59,6 @@
       }
 ?>
 
-
-
 <form class="form-group col-md-8 pull-right" action="/payoutcheck" method="post">
 
     {{ Csrf_field() }}
@@ -72,14 +70,73 @@
 </form>
 
 
-
 <section class="col-md-12 question question-type-normal">
 
   <ul class="nav nav-tabs" role="tablist">
 
-    <li role="presentation" class="active"><a class="tabs" href="#post" aria-controls="post" role="tab" data-toggle="tab">POST PAYOUT <br> <?=$total_payout_in_sbd;?> SBD</a></li>
-    <li role="presentation"><a class="tabs" href="#comment" aria-controls="comment" role="tab" data-toggle="tab">COMMENT PAYOUT <br> <?=$total_comment_payout_in_sbd;?> SBD </a></li>
-    <li role="presentation"><a class="tabs" href="#" aria-controls="" role="tab" data-toggle="tab">TOTAL PAYOUT <br> <?=$total_payout_in_sbd + $total_comment_payout_in_sbd;?> SBD </a></li>
+    <li role="presentation" class="active">
+      <a class="tabs" href="#post" aria-controls="post" role="tab" data-toggle="tab">POST PAYOUT <br>
+          <?php
+
+              if (isset($total_payout_in_sbd)) {
+
+                  echo $total_payout_in_sbd. " SBD";
+
+              }else {
+                echo "0 SBD";
+              }
+
+           ?>
+       SBD
+     </a>
+   </li>
+
+    <li role="presentation">
+      <a class="tabs" href="#comment" aria-controls="comment" role="tab" data-toggle="tab">COMMENT PAYOUT <br>
+
+        <?php
+
+            if (isset($total_comment_payout_in_sbd)) {
+
+                echo $total_comment_payout_in_sbd ." SBD";
+
+            }else {
+              echo "0 SBD";
+            }
+
+         ?>
+
+
+      </a>
+    </li>
+    <li role="presentation">
+      <a class="tabs" href="#" aria-controls="" role="tab" data-toggle="tab">TOTAL PAYOUT <br>
+
+          <?php
+
+          if (isset($total_payout_in_sbd) && isset($total_comment_payout_in_sbd)) {
+
+              echo $total_payout_in_sbd + $total_comment_payout_in_sbd ." SBD";
+
+          }elseif (isset($total_payout_in_sbd) && !isset($total_comment_payout_in_sbd)) {
+
+              echo $total_payout_in_sbd ." SBD";
+
+          }elseif (!isset($total_payout_in_sbd) && isset($total_comment_payout_in_sbd)) {
+
+              echo $total_comment_payout_in_sbd ." SBD";
+
+          }
+          else {
+            echo "0 SBD";
+          }
+
+           ?>
+
+
+
+      </a>
+  </li>
 
   </ul>
 <!-- Tab panes -->
@@ -113,7 +170,7 @@
 
             foreach ($profile as $key => $post_data) {
 
-               if( !($post_data["pending_payout_value"] == "0.000 SBD") && $_SESSION['username'] == $post_data["author"] ) {
+               if( !($post_data["pending_payout_value"] == "0.000 SBD") ) {
 
                  $count = $count + 1;
 
@@ -194,7 +251,7 @@
 
             foreach ($comment as $key => $comment_data) {
 
-               if( !($comment_data["pending_payout_value"] == "0.000 SBD") && $_SESSION['username'] == $comment_data["author"] ) {
+               if( !($comment_data["pending_payout_value"] == "0.000 SBD") ) {
 
                  $count = $count + 1;
 

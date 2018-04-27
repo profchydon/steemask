@@ -78,6 +78,20 @@ class CoinmarketcapController extends Controller
       fclose($marketcapfile);
     }
 
+    public function updateCoins ()
+    {
+
+        $this->writeSBDToFile();
+        $this->writeEthToFile();
+        $this->writeEosToFile();
+        $this->writeSteemToFile();
+        $this->writeBitcoinToFile();
+        $this->writeGolosToFile();
+        $this->writeMarketCapToFile();
+        return redirect()->back();
+
+    }
+
     // Get SBD details from sbd.txt file
     public function getSBD ()
     {
@@ -160,7 +174,7 @@ class CoinmarketcapController extends Controller
 }
 
 
-// 
+//
 // <?php
 //
 // namespace App\Http\Controllers;

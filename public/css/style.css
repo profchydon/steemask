@@ -11,6 +11,14 @@ body {
     text-align: center;
 }
 
+form.form-group.col-md-6.pull-right {
+    padding: 0px;
+}
+
+button.btn.btn-primary.pull-right {
+    margin: 10px 0px;
+}
+
 .glyphicon {
     position: relative;
     top: 1px;

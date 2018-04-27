@@ -13,10 +13,14 @@
 
 
 Route::get('/', 'CoinmarketcapController@getAllCoinDetails');
-Route::get('/steem', 'CoinmarketcapController@writeMarketCapToFile');
+Route::get('/updatecoins', 'CoinmarketcapController@updateCoins');
 
 
 Route::get('/profile', 'UsersController@profile');
 Route::get('/payout', 'UsersController@payout');
+Route::post('/payoutcheck', 'UsersController@payoutcheck');
+// Route::get('/payout?username={username}&check=ok', 'UsersController@notLoggedInPayout');
+
+Route::get('/payout/{username}', 'UsersController@notLoggedInPayout');
 Route::get('/logout', 'UsersController@logout');
 Route::get('/callback', 'UsersController@loginViaSteemConnect');

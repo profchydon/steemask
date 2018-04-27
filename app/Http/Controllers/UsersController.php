@@ -64,12 +64,36 @@ class UsersController extends Controller
       $data['profile'] = $this->user->getUserBlogData($username);
       $data['comment'] = $this->user->getUserCommentData($username);
 
-      // echo "<pre>";
-      // var_dump($data['comment']);
-      // dd();
-
       return view ('pages.payout' , $data);
 
     }
+
+    public function notLoggedInPayout ($username)
+    {
+
+      $data['coinmarketcap'] = $this->coinmarketcap->getAllCoinDetails();
+      $data['profile'] = $this->user->getUserBlogData($username);
+      $data['comment'] = $this->user->getUserCommentData($username);
+
+      return view ('pages.notloggedinpayout' , $data);
+
+    }
+
+    public function payoutcheck ()
+    {
+
+        if (isset($_POST['username'])) {
+
+            return redirect("/payout/".$_POST['username']);
+
+        }else {
+
+            return redirect()->back();
+
+        }
+
+    }
+
+    
 
 }
