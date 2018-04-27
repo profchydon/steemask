@@ -94,6 +94,20 @@ class UsersController extends Controller
 
     }
 
-    
+    public function profile ()
+    {
+
+      if (session_status () == PHP_SESSION_NONE) {
+         session_start();
+      }
+
+      $username = $_SESSION['username'];
+
+      $data['coinmarketcap'] = $this->coinmarketcap->getAllCoinDetails();
+      $data['profile'] = $this->user->getUserBlogData($username);
+
+      return view ('pages.profile' , $data);
+
+    }
 
 }
