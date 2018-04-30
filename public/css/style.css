@@ -11,6 +11,14 @@ body {
     text-align: center;
 }
 
+img.img-responsive.logo {
+    width: 7.6em;
+}
+
+a.navbar-brand {
+    padding: 3px 10px 0px 10px;
+}
+
 form.form-group.col-md-6.pull-right {
     padding: 0px;
 }

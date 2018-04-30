@@ -1,85 +1,116 @@
-<?php
+@php
 
     $total_price = 0;
     $total_payout_in_sbd = 0;
     $count = 0;
 
-    foreach ($profile as $key => $post_data) {
+@endphp
 
-       if( !($post_data["pending_payout_value"] == "0.000 SBD") && $_SESSION['username'] == $post_data["author"] ) {
+@foreach( $profile as $post_data )
 
-         $price = str_replace(" SBD", "", $post_data["pending_payout_value"]);
+    @if ( !($post_data["pending_payout_value"] == "0.000 SBD") && $_SESSION['username'] == $post_data["author"] )
 
-         if (!empty($post_data['beneficiaries'])) {
+        @php
 
-            $beneficiary = $post_data['beneficiaries'][0]['account'];
-            $weight = ($post_data['beneficiaries'][0]["weight"]/10000);
-            $price_after_beneficiary_deduction  = $price - ($price * $weight);
-            $payout_in_sbd  =  $price_after_beneficiary_deduction * 0.375;
-            $total_price = $total_price + $payout_in_sbd;
+            $price = str_replace(" SBD", "", $post_data["pending_payout_value"]);
 
-         }else {
+        @endphp
 
-           $payout_in_sbd  = $price   * 0.375;
-           $total_price = $total_price + $payout_in_sbd;
+        @if ( !empty($post_data['beneficiaries']) )
 
-         }
+            @php
 
-         $total_payout_in_sbd = round($total_payout_in_sbd + $payout_in_sbd,2);
-       }
-     }
+                $beneficiary = $post_data['beneficiaries'][0]['account'];
+                $weight = ($post_data['beneficiaries'][0]["weight"]/10000);
+                $price_after_beneficiary_deduction  = $price - ($price * $weight);
+                $payout_in_sbd  =  $price_after_beneficiary_deduction * 0.375;
+                $total_price = $total_price + $payout_in_sbd;
+
+            @endphp
+
+        @else
+
+            @php
+
+                $payout_in_sbd  = $price   * 0.375;
+                $total_price = $total_price + $payout_in_sbd;
+
+            @endphp
+
+        @endif
+
+          @php
+
+              $total_payout_in_sbd = round($total_payout_in_sbd + $payout_in_sbd,2);
+
+          @endphp
+
+    @endif
+
+@endforeach
+
+@php
 
      $total_price_comment = 0;
      $total_payout_in_sbd_comment = 0;
      $count_comment = 0;
 
-     foreach ($comment as $key => $comment_data) {
+@endphp
 
-        if( !($comment_data["pending_payout_value"] == "0.000 SBD") && $_SESSION['username'] == $comment_data["author"] ) {
+@foreach( $comment as $comment_data  )
 
-          $price_comment = str_replace(" SBD", "", $comment_data["pending_payout_value"]);
+    @if( !($comment_data["pending_payout_value"] == "0.000 SBD") && $_SESSION['username'] == $comment_data["author"] )
 
-          if (!empty($comment_data['beneficiaries'])) {
+        @php
 
-             $beneficiary_comment = $comment_data['beneficiaries'][0]['account'];
-             $weight_comment = ($comment_data['beneficiaries'][0]["weight"]/10000);
-             $price_after_beneficiary_deduction_comment  = $price_comment - ($price_comment * $weight_comment);
-             $payout_in_sbd_comment  =  $price_after_beneficiary_deduction_comment * 0.375;
-             $total_price_comment = $total_price_comment + $payout_in_sbd_comment;
+            $price_comment = str_replace(" SBD", "", $comment_data["pending_payout_value"]);
 
-          }else {
+        @endphp
 
-            $payout_in_sbd_comment  = $price_comment   * 0.375;
-            $total_price_comment = $total_price_comment + $payout_in_sbd_comment;
+        @if (!empty($comment_data['beneficiaries']))
 
-          }
+            @php
 
-          $total_comment_payout_in_sbd = round($total_payout_in_sbd_comment + $payout_in_sbd_comment,2);
-        }
-      }
-?>
+               $beneficiary_comment = $comment_data['beneficiaries'][0]['account'];
+               $weight_comment = ($comment_data['beneficiaries'][0]["weight"]/10000);
+               $price_after_beneficiary_deduction_comment  = $price_comment - ($price_comment * $weight_comment);
+               $payout_in_sbd_comment  =  $price_after_beneficiary_deduction_comment * 0.375;
+               $total_price_comment = $total_price_comment + $payout_in_sbd_comment;
+
+            @endphp
+
+        @else
+
+            @php
+
+              $payout_in_sbd_comment  = $price_comment   * 0.375;
+              $total_price_comment = $total_price_comment + $payout_in_sbd_comment;
+
+            @endphp
+
+        @endif
+
+          @php
+
+              $total_comment_payout_in_sbd = round($total_payout_in_sbd_comment + $payout_in_sbd_comment,2);
+
+          @endphp
+
+    @endif
+
+@endforeach
 
 
-
-<form class="form-group col-md-8 pull-right" action="/payoutcheck" method="post">
-
-    {{ Csrf_field() }}
-
-    <input class="form-control" type="text" name="username" value="" placeholder="Enter Username without @ to view for other users">
-
-    <button class="btn btn-primary pull-right" type="submit" value="ok" name="check">Go</button>
-
-</form>
-
+@include ('layout.forms.checkpayout')
 
 
 <section class="col-md-12 question question-type-normal">
 
   <ul class="nav nav-tabs" role="tablist">
 
-    <li role="presentation" class="active"><a class="tabs" href="#post" aria-controls="post" role="tab" data-toggle="tab">POST PAYOUT <br> <?=$total_payout_in_sbd;?> SBD</a></li>
-    <li role="presentation"><a class="tabs" href="#comment" aria-controls="comment" role="tab" data-toggle="tab">COMMENT PAYOUT <br> <?=$total_comment_payout_in_sbd;?> SBD </a></li>
-    <li role="presentation"><a class="tabs" href="#" aria-controls="" role="tab" data-toggle="tab">TOTAL PAYOUT <br> <?=$total_payout_in_sbd + $total_comment_payout_in_sbd;?> SBD </a></li>
+    <li role="presentation" class="active"><a class="tabs" href="#post" aria-controls="post" role="tab" data-toggle="tab">POST PAYOUT <br> {{ $total_payout_in_sbd }} SBD</a></li>
+    <li role="presentation"><a class="tabs" href="#comment" aria-controls="comment" role="tab" data-toggle="tab">COMMENT PAYOUT <br> {{ $total_comment_payout_in_sbd }} SBD </a></li>
+    <li role="presentation"><a class="tabs" href="#" aria-controls="" role="tab" data-toggle="tab">TOTAL PAYOUT <br> {{ $total_payout_in_sbd + $total_comment_payout_in_sbd }} SBD </a></li>
 
   </ul>
 <!-- Tab panes -->
@@ -93,7 +124,7 @@
      <thead>
        <tr>
 
-           <th>S/no</th>
+           <th>s/no</th>
            <th>Post URL</th>
            <th>Beneficiary</th>
            <th>Post Title</th>
@@ -105,63 +136,81 @@
     </thead>
       <tbody>
 
-        <?php
+        @php
 
             $total_price = 0;
             $total_payout_in_sbd = 0;
             $count = 0;
 
-            foreach ($profile as $key => $post_data) {
+        @endphp
 
-               if( !($post_data["pending_payout_value"] == "0.000 SBD") && $_SESSION['username'] == $post_data["author"] ) {
+        @foreach( $profile as $post_data )
 
-                 $count = $count + 1;
+            @if ( !($post_data["pending_payout_value"] == "0.000 SBD") && $_SESSION['username'] == $post_data["author"] )
 
-                 $post_url = "https://www.steemit.com/@".$post_data["author"]."/".$post_data["permlink"];
+                @php
 
-                 $author_url = "https://www.steemit.com/@".$post_data["author"];
+                     $count = $count + 1;
 
-                 $post_title = substr($post_data["title"],0,23).'...';
+                     $post_url = "https://www.steemit.com/@".$post_data["author"]."/".$post_data["permlink"];
 
-                 $price = str_replace(" SBD", "", $post_data["pending_payout_value"]);
+                     $author_url = "https://www.steemit.com/@".$post_data["author"];
 
-                 $payout_time = $post_data['created'];
+                     $post_title = substr($post_data["title"],0,23).'...';
 
-                 if (!empty($post_data['beneficiaries'])) {
+                     $price = str_replace(" SBD", "", $post_data["pending_payout_value"]);
 
-                    $beneficiary = $post_data['beneficiaries'][0]['account'];
-                    $weight = ($post_data['beneficiaries'][0]["weight"]/10000);
+                     $payout_time = $post_data['created'];
 
-                    $price_after_beneficiary_deduction  = $price - ($price * $weight);
-          					$payout_in_sbd  =  $price_after_beneficiary_deduction * 0.375;
-          					$total_price = $total_price + $payout_in_sbd;
+                @endphp
 
-                 }else {
+                @if ( !empty($post_data['beneficiaries']) )
 
-                   $payout_in_sbd  = $price   * 0.375;
-                   $total_price = $total_price + $payout_in_sbd;
+                    @php
 
-                 }
+                      $beneficiary = $post_data['beneficiaries'][0]['account'];
+                      $weight = ($post_data['beneficiaries'][0]["weight"]/10000);
 
-                 $total_payout_in_sbd = $total_payout_in_sbd + $payout_in_sbd;
+                      $price_after_beneficiary_deduction  = $price - ($price * $weight);
+                      $payout_in_sbd  =  $price_after_beneficiary_deduction * 0.375;
+                      $total_price = $total_price + $payout_in_sbd;
 
-             ?>
 
-             <tr>
-               <td><?=$count;?></td>
-               <td> <a href="<?=$post_url;?>"><?=$post_title;?></a> </td>
-               <td><?=$beneficiary;?> (<?= $weight * 100;?>%)</td>
-               <td><?=$post_title;?></td>
-               <td>$<?=$price;?></td>
-               <td><?=$payout_in_sbd;?></td>
-               <td><?=$payout_time;?></td>
-             </tr>
+                    @endphp
 
-         <?php
-             }
-           }
+                @else
 
-         ?>
+                    @php
+
+                      $payout_in_sbd  = $price   * 0.375;
+                      $total_price = $total_price + $payout_in_sbd;
+
+                    @endphp
+
+                @endif
+
+                  @php
+
+                      $total_payout_in_sbd = round($total_payout_in_sbd + $payout_in_sbd,2);
+
+
+                  @endphp
+
+
+                  <tr>
+                     <td>{{ $count }}</td>
+                     <td> <a href="{{ $post_url }}">{{ $post_title }}</a> </td>
+                     <td> {{ $beneficiary }} ({{ $weight * 100 }}%)</td>
+                     <td> {{ $post_title }} </td>
+                     <td>${{ $price }}</td>
+                     <td> {{ $total_payout_in_sbd }}</td>
+                     <td> {{ $payout_time }}</td>
+                 </tr>
+
+
+            @endif
+
+        @endforeach
 
     </tbody>
 
@@ -185,61 +234,73 @@
 
        </tr>
     </thead>
-      <tbody>
 
-        <?php
+    <tbody>
 
-            $total_price = 0;
-            $count = 0;
+      @php
 
-            foreach ($comment as $key => $comment_data) {
+          $$total_price = 0;
+          $count = 0;
 
-               if( !($comment_data["pending_payout_value"] == "0.000 SBD") && $_SESSION['username'] == $comment_data["author"] ) {
+      @endphp
 
-                 $count = $count + 1;
+      @foreach( $comment  as $comment_data )
 
-                 $post_url = "https://www.steemit.com/@".$comment_data["author"]."/".$comment_data["permlink"];
+          @if( !($comment_data["pending_payout_value"] == "0.000 SBD") && $_SESSION['username'] == $comment_data["author"] )
 
-                 $author_url = "https://www.steemit.com/@".$comment_data["author"];
+              @php
 
-                 $post_title = substr($comment_data["title"],0,43).'...';
+                  $count = $count + 1;
 
-                 $price = str_replace(" SBD", "", $comment_data["pending_payout_value"]);
+                  $post_url = "https://www.steemit.com/@".$comment_data["author"]."/".$comment_data["permlink"];
 
-                 $payout_time = $comment_data['created'];
+                  $author_url = "https://www.steemit.com/@".$comment_data["author"];
 
-                 if (!empty($comment_data['beneficiaries'])) {
+                  $post_title = substr($comment_data["title"],0,43).'...';
 
-                    $beneficiary = $comment_data['beneficiaries'][0]['account'];
-                    $weight = ($comment_data['beneficiaries'][0]["weight"]/10000);
+                  $price = str_replace(" SBD", "", $comment_data["pending_payout_value"]);
 
-                    $price_after_beneficiary_deduction  = $price - ($price * $weight);
-                   $payout_in_sbd  =  $price_after_beneficiary_deduction * 0.375;
-                   $total_price = $total_price + $payout_in_sbd;
+                  $payout_time = $comment_data['created'];
 
-                 }else {
+              @endphp
 
-                   $payout_in_sbd  = $price   * 0.375;
-                   $total_price = $total_price + $payout_in_sbd;
+              @if ( !empty($comment_data['beneficiaries']) )
 
-                 }
+                  @php
 
+                     $beneficiary = $comment_data['beneficiaries'][0]['account'];
+                     $weight = ($comment_data['beneficiaries'][0]["weight"]/10000);
 
-             ?>
+                     $price_after_beneficiary_deduction  = $price - ($price * $weight);
+                     $payout_in_sbd  =  $price_after_beneficiary_deduction * 0.375;
+                     $total_price = $total_price + $payout_in_sbd;
 
-             <tr>
-               <td><?=$count;?></td>
-               <td> <a href="<?=$post_url;?>"><?=$post_title;?></a> </td>
-               <td><?=$post_title;?></td>
-               <td>$<?=$price;?></td>
-               <td><?=$payout_in_sbd;?></td>
-               <td><?=$payout_time;?></td>
-             </tr>
+                  @endphp
 
-         <?php
-             }
-           }
-         ?>
+              @else
+
+                  @php
+
+                    $payout_in_sbd  = $price   * 0.375;
+                    $total_price = $total_price + $payout_in_sbd;
+
+                  @endphp
+
+              @endif
+
+                  <tr>
+                     <td>{{ $count }}</td>
+                     <td> <a href="{{ $post_url }}">{{ $post_title }}</a> </td>
+                     <td> {{ $post_title }} </td>
+                     <td>${{ $price }}</td>
+                     <td> {{ round($payout_in_sbd,2) }}</td>
+                     <td> {{ $payout_time }}</td>
+                  </tr>
+
+          @endif
+
+      @endforeach
+
 
     </tbody>
 

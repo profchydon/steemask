@@ -13,6 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link rel="icon" href="/img/icon.png" sizes="16x16" type="image/png">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 

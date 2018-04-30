@@ -43,8 +43,7 @@
 
         <a href="/" class="navbar-brand">
 
-          <!-- <img src="" class="img-responsive logo" alt="SteemAnswer"> -->
-          <h4 class="navbar-text-logo">SteemAsk</h4>
+          <img src="/img/logo_beta.png" class="img-responsive logo" alt="SteemAnswer">
 
         </a>
 

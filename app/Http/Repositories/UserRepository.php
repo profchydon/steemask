@@ -71,7 +71,6 @@ public function getUserCommentData ($username)
 {
   $query = urlencode('{"start_author":"'.$username.'", "limit": "100"}');
   $url = 'https://api.steemjs.com/get_discussions_by_comments?query='.$query;
-  // $url = 'https://api.steemjs.com/get_discussions_by_comments?query={"start_author":"'.$username.'","limit":"100"}';
   $json= file_get_contents($url);
   $data = json_decode($json,true);
   return $data;
