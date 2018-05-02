@@ -1,0 +1,19 @@
+[
+    {
+        "id": "eos", 
+        "name": "EOS", 
+        "symbol": "EOS", 
+        "rank": "5", 
+        "price_usd": "18.7059", 
+        "price_btc": "0.00204361", 
+        "24h_volume_usd": "2255590000.0", 
+        "market_cap_usd": "15542472103.0", 
+        "available_supply": "830886090.0", 
+        "total_supply": "900000000.0", 
+        "max_supply": "1000000000.0", 
+        "percent_change_1h": "0.46", 
+        "percent_change_24h": "8.18", 
+        "percent_change_7d": "29.55", 
+        "last_updated": "1525277353"
+    }
+]

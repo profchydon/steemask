@@ -1,0 +1,19 @@
+[
+    {
+        "id": "golos", 
+        "name": "Golos", 
+        "symbol": "GOLOS", 
+        "rank": "497", 
+        "price_usd": "0.0949775", 
+        "price_btc": "0.00001038", 
+        "24h_volume_usd": "34747.1", 
+        "market_cap_usd": "11826493.0", 
+        "available_supply": "124518891.0", 
+        "total_supply": "124518891.0", 
+        "max_supply": null, 
+        "percent_change_1h": "0.36", 
+        "percent_change_24h": "-1.22", 
+        "percent_change_7d": "-4.58", 
+        "last_updated": "1525277349"
+    }
+]
