@@ -32,10 +32,19 @@ class UsersController extends Controller
         $profile = $data['user']['account']['json_metadata'];
         $profile = json_decode($profile, TRUE);
 
+
+        $_SESSION['app'] = $data['user']['account']['posting']['account_auths'];
         $_SESSION['about'] = $profile['profile']['about'];
         $_SESSION['location'] = $profile['profile']['location'];
         $_SESSION['website'] = $profile['profile']['website'];
         $_SESSION['avatar'] = "https://steemitimages.com/u/".$data['user']['user']."/avatar";
+        $_SESSION['post_count'] = $data['user']['account']['post_count'];
+        $_SESSION['voting_power'] = $data['user']['account']['voting_power'];
+        $_SESSION['balance'] = $data['user']['account']['balance'];
+        $_SESSION['savings_balance'] = $data['user']['account']['savings_balance'];
+        $_SESSION['sbd_balance'] = $data['user']['account']['sbd_balance'];
+        $_SESSION['savings_sbd_balance'] = $data['user']['account']['savings_sbd_balance'];
+        $_SESSION['witness_votes'] = $data['user']['account']['witness_votes'];
 
         return view ('home' , $data);
 
@@ -105,6 +114,8 @@ class UsersController extends Controller
 
       $data['coinmarketcap'] = $this->coinmarketcap->getAllCoinDetails();
       $data['profile'] = $this->user->getUserBlogData($username);
+
+
 
       return view ('pages.profile' , $data);
 

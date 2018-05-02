@@ -92,7 +92,7 @@
 
           @php
 
-              $total_comment_payout_in_sbd = round($total_payout_in_sbd_comment + $payout_in_sbd_comment,2);
+              $total_payout_in_sbd_comment = round($total_payout_in_sbd_comment + $payout_in_sbd_comment,2);
 
           @endphp
 
@@ -109,8 +109,8 @@
   <ul class="nav nav-tabs" role="tablist">
 
     <li role="presentation" class="active"><a class="tabs" href="#post" aria-controls="post" role="tab" data-toggle="tab">POST PAYOUT <br> {{ $total_payout_in_sbd }} SBD</a></li>
-    <li role="presentation"><a class="tabs" href="#comment" aria-controls="comment" role="tab" data-toggle="tab">COMMENT PAYOUT <br> {{ $total_comment_payout_in_sbd }} SBD </a></li>
-    <li role="presentation"><a class="tabs" href="#" aria-controls="" role="tab" data-toggle="tab">TOTAL PAYOUT <br> {{ $total_payout_in_sbd + $total_comment_payout_in_sbd }} SBD </a></li>
+    <li role="presentation"><a class="tabs" href="#comment" aria-controls="comment" role="tab" data-toggle="tab">COMMENT PAYOUT <br> {{ $total_payout_in_sbd_comment }} SBD </a></li>
+    <li role="presentation"><a class="tabs" href="#" aria-controls="" role="tab" data-toggle="tab">TOTAL PAYOUT <br> {{ $total_payout_in_sbd + $total_payout_in_sbd_comment }} SBD </a></li>
 
   </ul>
 <!-- Tab panes -->

@@ -8,13 +8,9 @@
   <div class="row home-row">
 
       @include('layout.profile')
-      @include('layout.side')
 
   </div><!-- /.row -->
 
 </div><!-- /.container -->
-
-
-
 
 @endsection

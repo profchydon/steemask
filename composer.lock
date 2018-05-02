@@ -4,8 +4,63 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8f2120fa77d42a42b4210cdbe1c114e2",
+    "content-hash": "caf0c0abf9947df582c0eb79492ef2cb",
     "packages": [
+        {
+            "name": "buzzylab/laradown",
+            "version": "v0.1.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/buzzylab/laradown.git",
+                "reference": "c18bc4d73e70ac255c362cb2d175884b9c40c6d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/buzzylab/laradown/zipball/c18bc4d73e70ac255c362cb2d175884b9c40c6d8",
+                "reference": "c18bc4d73e70ac255c362cb2d175884b9c40c6d8",
+                "shasum": ""
+            },
+            "require": {
+                "erusev/parsedown": "^1.6",
+                "erusev/parsedown-extra": "0.7.*",
+                "illuminate/container": "^5.1",
+                "illuminate/contracts": "^5.1",
+                "illuminate/events": "^5.1",
+                "illuminate/filesystem": "^5.1",
+                "illuminate/support": "^5.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Buzzylab\\Laradown\\": "src"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "buzzylab",
+                    "email": "buzzyllab@gmail.com"
+                },
+                {
+                    "name": "maher el gamil",
+                    "email": "maherbusnes@gmail.com"
+                }
+            ],
+            "description": "A New Markdown parser for Laravel built on parsedown",
+            "keywords": [
+                "editor",
+                "laravel",
+                "markdown",
+                "package"
+            ],
+            "time": "2018-03-10T00:32:46+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
@@ -219,20 +274,24 @@
         },
         {
             "name": "erusev/parsedown",
-            "version": "1.6.3",
+            "version": "1.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/erusev/parsedown.git",
-                "reference": "728952b90a333b5c6f77f06ea9422b94b585878d"
+                "reference": "92e9c27ba0e74b8b028b111d1b6f956a15c01fc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/728952b90a333b5c6f77f06ea9422b94b585878d",
-                "reference": "728952b90a333b5c6f77f06ea9422b94b585878d",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/92e9c27ba0e74b8b028b111d1b6f956a15c01fc1",
+                "reference": "92e9c27ba0e74b8b028b111d1b6f956a15c01fc1",
                 "shasum": ""
             },
             "require": {
+                "ext-mbstring": "*",
                 "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35"
             },
             "type": "library",
             "autoload": {
@@ -257,7 +316,51 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2017-05-14T14:47:48+00:00"
+            "time": "2018-03-08T01:11:30+00:00"
+        },
+        {
+            "name": "erusev/parsedown-extra",
+            "version": "0.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/erusev/parsedown-extra.git",
+                "reference": "0db5cce7354e4b76f155d092ab5eb3981c21258c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/0db5cce7354e4b76f155d092ab5eb3981c21258c",
+                "reference": "0db5cce7354e4b76f155d092ab5eb3981c21258c",
+                "shasum": ""
+            },
+            "require": {
+                "erusev/parsedown": "~1.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ParsedownExtra": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emanuil Rusev",
+                    "email": "hello@erusev.com",
+                    "homepage": "http://erusev.com"
+                }
+            ],
+            "description": "An extension of Parsedown that adds support for Markdown Extra.",
+            "homepage": "https://github.com/erusev/parsedown-extra",
+            "keywords": [
+                "markdown",
+                "markdown extra",
+                "parsedown",
+                "parser"
+            ],
+            "time": "2015-11-01T10:19:22+00:00"
         },
         {
             "name": "fideloper/proxy",
