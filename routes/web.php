@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/faq', 'PagesController@faq');
+Route::get('/terms', 'PagesController@terms');
+Route::get('/privacy', 'PagesController@privacy');
+Route::get('/disclaimer', 'PagesController@disclaimer');
 
 Route::get('/', 'CoinmarketcapController@getAllCoinDetails');
 Route::get('/updatecoins', 'CoinmarketcapController@updateCoins');

@@ -115,9 +115,6 @@ class UsersController extends Controller
       $data['coinmarketcap'] = $this->coinmarketcap->getAllCoinDetails();
       $data['profile'] = $this->user->getUserBlogData($username);
 
-      // echo "<pre>";
-      // var_dump($data['profile']);
-
       return view ('pages.profile' , $data);
 
     }

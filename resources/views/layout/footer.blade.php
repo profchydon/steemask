@@ -1,6 +1,42 @@
-<footer class="">
+<footer>
 
+  <div class="container">
+    <div class="row">
 
+      <div class="col-xs-12 col-md-3">
+        <ul>
+            <li><a href="/faq">Frequently Asked Question</a></li>
+        </ul>
+      </div>
+
+      <div class="col-xs-12 col-md-3">
+        <ul>
+            <li><a href="/terms">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <div class="col-xs-12 col-md-3">
+        <ul>
+            <li><a href="/privacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="col-xs-12 col-md-3">
+        <ul>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <hr id="divider" style="border-top: 1px solid #276396;">
+
+  <div class="row">
+      <div class="col-md-12">
+          <h5 class="copyright text-center">&copy; 2018 copyright reserved. SteemAsk </h5>
+      </div>
+  </div>
 
 </footer>
 

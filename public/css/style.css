@@ -51,12 +51,30 @@ table.table.table-striped.table-responsive {
     margin: 30px 0px;
 }
 
+p.about-p {
+    font-size: 15px;
+}
+
 .steemaskholder {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin-bottom: 30px;
     padding: 20px;
+    border: 1px solid #dedede;
+    background: #FFF;
+    -moz-box-shadow: 0 0 5px #dedede;
+    -webkit-box-shadow: 0 0 5px #dedede;
+    box-shadow: 0 0 5px #dedede;
+    position: relative;
+}
+
+.faq {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    padding: 20px 40px;
     border: 1px solid #dedede;
     background: #FFF;
     -moz-box-shadow: 0 0 5px #dedede;
@@ -314,6 +332,21 @@ section.col-md-12.content-left {
   /* border-radius: 6px; */
   overflow: hidden;
   margin-bottom: 20px;
+}
+
+footer {
+    background: #337ab7;
+    padding: 30px 0px;
+    color: #fff;
+}
+
+li {
+    list-style-type: none;
+}
+
+footer a {
+    color: #fff;
+    font-weight: 600;
 }
 
 .apps {

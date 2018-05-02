@@ -26,4 +26,45 @@ class PagesController extends Controller
 
       return view ('pages.profile' , $data);
     }
+
+
+    public function faq ()
+    {
+      if (session_status () == PHP_SESSION_NONE) {
+        session_start();
+      }
+      $data['coinmarketcap'] = $this->coinmarketcap->getAllCoinDetails();
+
+      return view ('pages.faq' , $data);
+    }
+
+    public function terms ()
+    {
+      if (session_status () == PHP_SESSION_NONE) {
+        session_start();
+      }
+      $data['coinmarketcap'] = $this->coinmarketcap->getAllCoinDetails();
+
+      return view ('pages.terms' , $data);
+    }
+
+    public function disclaimer ()
+    {
+      if (session_status () == PHP_SESSION_NONE) {
+        session_start();
+      }
+      $data['coinmarketcap'] = $this->coinmarketcap->getAllCoinDetails();
+
+      return view ('pages.disclaimer' , $data);
+    }
+
+    public function privacy ()
+    {
+      if (session_status () == PHP_SESSION_NONE) {
+        session_start();
+      }
+      $data['coinmarketcap'] = $this->coinmarketcap->getAllCoinDetails();
+
+      return view ('pages.privacy' , $data);
+    }
 }
