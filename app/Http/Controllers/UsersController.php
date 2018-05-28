@@ -23,7 +23,7 @@ class UsersController extends Controller
 
     public function loginViaSteemConnect ()
     {
-
+      
         $data['user'] = $this->user->steemConnect();
 
         $data['coinmarketcap'] = $this->coinmarketcap->getAllCoinDetails();
@@ -35,8 +35,8 @@ class UsersController extends Controller
 
         $_SESSION['app'] = $data['user']['account']['posting']['account_auths'];
         $_SESSION['about'] = $profile['profile']['about'];
-        $_SESSION['location'] = $profile['profile']['location'];
-        $_SESSION['website'] = $profile['profile']['website'];
+        $_SESSION['location'] = isset($profile['profile']['location']) ? $profile['profile']['location'] : "";
+        $_SESSION['website'] = isset($profile['profile']['website']) ? $profile['profile']['website'] : "";
         $_SESSION['avatar'] = "https://steemitimages.com/u/".$data['user']['user']."/avatar";
         $_SESSION['post_count'] = $data['user']['account']['post_count'];
         $_SESSION['voting_power'] = $data['user']['account']['voting_power'];
@@ -57,6 +57,11 @@ class UsersController extends Controller
         session_destroy();
 
         return redirect('/');
+
+    }
+
+    public function login ()
+    {
 
     }
 
@@ -116,6 +121,66 @@ class UsersController extends Controller
       $data['profile'] = $this->user->getUserBlogData($username);
 
       return view ('pages.profile' , $data);
+
+    }
+
+    public function askAQuestion (Request $request)
+    {
+        if (session_status () == PHP_SESSION_NONE) {
+           session_start();
+        }
+
+        // Initialize Variables
+
+        // Post title
+        $title = htmlentities(strip_tags($request->title));
+
+        // Post body
+        $body = htmlentities(strip_tags($request->body));
+
+        // Replace space in post title with - to create a valid permlink
+        $permlink = str_replace(' ', '-', mb_strtolower($title));
+
+        // Make default parent tag to be steemask
+        $parent_permlink = "steemask";
+
+        $author = $_SESSION['username'];
+
+        $tags = htmlentities(strip_tags($request->tags));
+
+        '{"tags":["steemask","contest","steembees","stach"]}';
+
+        // $steemconnect = 'https://steemconnect.com/sign/comment?parent_permlink='.$parent_permlink.'&author='.$author.'&permlink='.$permlink.'&title='.$title.'&body='.$body.'&json_metadata='.$tags;
+
+        $steemconnect = 'https://steemconnect.com/sign/comment?parent_permlink='.$parent_permlink.'&author='.$author.'&permlink='.$permlink.'&title='.$title.'&body='.$body;
+
+        $authstr = "authorization: " . $_SESSION['code'];
+
+        $check = curl_init();
+
+        curl_setopt_array($check, array(
+
+              CURLOPT_URL => $steemconnect,
+              CURLOPT_RETURNTRANSFER => true,
+              CURLOPT_ENCODING => "",
+              CURLOPT_MAXREDIRS => 1,
+              CURLOPT_TIMEOUT => 30,
+              CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+              CURLOPT_CUSTOMREQUEST => "POST",
+              CURLOPT_POSTFIELDS => "{}",
+              CURLOPT_HTTPHEADER => array(
+                  $authstr,
+                  "cache-control: no-cache",
+                  "content-type: application/json",
+              ),
+
+          ));
+
+          $user = curl_exec($check);
+
+          curl_close($check);
+
+          $user = json_decode($user, TRUE);
 
     }
 

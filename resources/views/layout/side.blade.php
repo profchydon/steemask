@@ -1,6 +1,6 @@
 <section class="col-md-3 content-right">
 
-  <a href="#" class="ask">Ask a Question</a>
+  <a href="/ask-a-question" class="ask">Ask a Question</a>
 
 
   <div class="quest-of-the-day">

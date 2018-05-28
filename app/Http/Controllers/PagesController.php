@@ -67,4 +67,14 @@ class PagesController extends Controller
 
       return view ('pages.privacy' , $data);
     }
+
+    public function askAQuestion ()
+    {
+      if (session_status () == PHP_SESSION_NONE) {
+        session_start();
+      }
+      $data['coinmarketcap'] = $this->coinmarketcap->getAllCoinDetails();
+
+      return view ('pages.ask-a-question' , $data);
+    }
 }

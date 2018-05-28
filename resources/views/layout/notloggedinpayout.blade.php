@@ -193,8 +193,17 @@
           					$payout_in_sbd  =  $price_after_beneficiary_deduction * 0.375;
           					$total_price = $total_price + $payout_in_sbd;
 
+                 }elseif ($post_data['beneficiaries'] == "0"){
+
+                   $beneficiary = "None";
+                   $weight = "0";
+                   $payout_in_sbd  = $price   * 0.375;
+                   $total_price = $total_price + $payout_in_sbd;
+
                  }else {
 
+                   $beneficiary = "None";
+                   $weight = "0";
                    $payout_in_sbd  = $price   * 0.375;
                    $total_price = $total_price + $payout_in_sbd;
 

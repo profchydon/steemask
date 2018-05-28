@@ -178,10 +178,23 @@
 
                     @endphp
 
+                @elseif ($post_data['beneficiaries'] == "0")
+
+                    @php
+
+                      $beneficiary = "None";
+                      $weight = "0";
+                      $payout_in_sbd  = $price   * 0.375;
+                      $total_price = $total_price + $payout_in_sbd;
+
+                    @endphp
+
                 @else
 
                     @php
 
+                      $beneficiary = "None";
+                      $weight = "0";
                       $payout_in_sbd  = $price   * 0.375;
                       $total_price = $total_price + $payout_in_sbd;
 

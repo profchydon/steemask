@@ -47,9 +47,20 @@
 <script src="/js/to-markdown.js"></script>
 <script src="/js/bootstrap-markdown.js"></script>
 <script src="locale/bootstrap-markdown.fr.js"></script>
+<script src="//cdn.steemjs.com/lib/latest/steem.min.js"></script>
+<script src="/js/main.js"></script>
 
 
 <script type="text/javascript">
+
+
+steem.broadcast.vote(wif, voter, author, permlink, weight, function(err, result) {
+  console.log(err, result);
+});
+
+
+
+
 
 // jQuery
 if ( $('.pagination__next').length ) {

@@ -65,48 +65,53 @@
               @if ($tag == "steemask")
 
               <article class="question question-type-normal">
-                <h2 class="quest-h2">
-                    <a href="" class="question-a"> {{ $post_title }} </a>
-                </h2>
 
-                <div class="question-inner">
-                    <div class="clearfix"></div>
+                <div class="span-top"></div>
 
-                    <div class="">
-                        <img src=" {{ $img }} " alt="profile-img" class="profile-img-dashboard img-responsive">
-                        <h4 class="username-dashboard"> {{ $post_data["author"] }} </h4>
-                        <h5 class="time-dashboard"> </h5>
-                        <h5 class="comment-count"><i class="fa fa-comment" aria-hidden="true"></i> {{ $post_data["children"] }}</h5>
+                <div class="span-inner">
+                  <h2 class="quest-h2">
+                      <a href="" class="question-a"> {{ $post_title }} </a>
+                  </h2>
 
-                        <h5 class="upvote-count"><i class="fa fa-heart" aria-hidden="true"></i> {{ $post_data["net_votes"] }}</h5>
+                  <div class="question-inner">
+                      <div class="clearfix"></div>
 
-                        <h5 class="payout-dashboard">
+                      <div class="">
+                          <img src=" {{ $img }} " alt="profile-img" class="profile-img-dashboard img-responsive">
+                          <h4 class="username-dashboard"> {{ $post_data["author"] }} </h4>
+                          <h5 class="time-dashboard"> </h5>
+                          <h5 class="comment-count"><i class="fa fa-comment" aria-hidden="true"></i> {{ $post_data["children"] }}</h5>
 
-                            @if ( $pending_payout && $pending_payout != "0.00" )
+                          <h5 class="upvote-count"><i class="fa fa-heart" aria-hidden="true"></i> {{ $post_data["net_votes"] }}</h5>
 
-                                ${{ $pending_payout }}
+                          <h5 class="payout-dashboard">
 
-                            @else
+                              @if ( $pending_payout && $pending_payout != "0.00" )
 
-                                ${{ $paid_out }}
+                                  ${{ $pending_payout }}
 
-                            @endif
+                              @else
 
-                        </h5>
+                                  ${{ $paid_out }}
 
-                        <div class="tags-block pull-right">
+                              @endif
 
-                          @foreach ($tags as $tag)
+                          </h5>
 
-                              <a href="/{{ $tag }}" class="tags">{{ $tag }}</a>
+                          <div class="tags-block pull-right">
 
-                          @endforeach
+                            @foreach ($tags as $tag)
 
-                        </div>
+                                <a href="/{{ $tag }}" class="tags">{{ $tag }}</a>
 
-                    </div>
+                            @endforeach
 
-                    <div class="clearfix" id="clear"></div>
+                          </div>
+
+                      </div>
+
+                      <div class="clearfix" id="clear"></div>
+                  </div>
                 </div>
 
              </article>
