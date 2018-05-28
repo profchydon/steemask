@@ -1,141 +1,105 @@
     <section class="col-md-9">
 
-      <article class="question question-type-normal">
-        <div class="span-top"></div>
-
-        <div class="span-inner">
-          <h2 class="quest-h2">
-              <a href="" class="question-a">Steem Power: What is the essence of powering up</a>
-          </h2>
-
-          <div class="question-inner">
-              <div class="clearfix"></div>
-              <p class="question-desc">
-                I just recently signed up on steemit and finding some things difficult to understand. One of which is the steem  power and powering up. I really want to know the essence of powering up on steemit.
-              </p>
-
-              <div class="">
-                  <img src="https://steemitimages.com/u/mathemandy/avatar" alt="profile-img" class="profile-img-dashboard img-responsive">
-                  <h4 class="username-dashboard">mathemandy</h4>
-                  <h5 class="time-dashboard"> -  12 hours ago</h5>
-                  <h5 class="comment-count"><i class="fa fa-comment" aria-hidden="true"></i> 12</h5>
-
-                  <h5 class="upvote-count"><i class="fa fa-heart" aria-hidden="true"></i> 33</h5>
-
-                  <h5 class="payout-dashboard"> $20.34</h5>
-
-                  <div class="tags-block pull-right">
-                    <a href="#" class="tags">STEEMANSK</a>
-                    <a href="#" class="tags">PAYOUT</a>
-                    <a href="#" class="tags">STEEMIT</a>
-
-                  </div>
-
-              </div>
-
-              <div class="clearfix" id="clear"></div>
-          </div>
+      <div id="feed-loader" class="hide">
+        <div class="card">
+            <div class="timeline-wrapper">
+                <div class="timeline-item">
+                    <div class="animated-background">
+                        <div class="background-masker header-top"></div>
+                        <div class="background-masker header-left"></div>
+                        <div class="background-masker header-right"></div>
+                        <div class="background-masker header-bottom"></div>
+                        <div class="background-masker subheader-left"></div>
+                        <div class="background-masker subheader-right"></div>
+                        <div class="background-masker subheader-bottom"></div>
+                        <div class="background-masker content-top"></div>
+                        <div class="background-masker content-first-end"></div>
+                        <div class="background-masker content-second-line"></div>
+                        <div class="background-masker content-second-end"></div>
+                        <div class="background-masker content-third-line"></div>
+                        <div class="background-masker content-third-end"></div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
-     </article>
+    <div class="addloader" id="addloader">
 
+    </div>
 
-     <article class="question question-type-normal">
+    @foreach ($posts as $post)
 
-       <div class="span-top"></div>
-
-       <div class="span-inner">
-         <h2 class="">
-             <a href="" class="question-a">Post Payout: My post payout keeps decreasing by the day.</a>
-         </h2>
-
-         <div class="question-inner">
-             <div class="clearfix"></div>
-             <p class="question-desc">
-               Hi, please i need help signing up on steemit. I have been trying for over 3 weeks but still it hasn't been successful. Is there anything i need to do?
-             </p>
-
-             <div class="">
-               <img src="https://steemitimages.com/u/kristenantai01/avatar" alt="profile-img" class="profile-img-dashboard img-responsive">
-               <h4 class="username-dashboard">kristenantai01</h4>
-                 <h5 class="time-dashboard"> -  1 hours ago</h5>
-                 <h5 class="comment-count"><i class="fa fa-comment" aria-hidden="true"></i> 88</h5>
-
-                 <h5 class="upvote-count"><i class="fa fa-heart" aria-hidden="true"></i> 13</h5>
-
-                 <h5 class="payout-dashboard"> $20.34</h5>
-
-                 <div class="tags-block pull-right">
-                   <a href="#" class="tags">STEEMANSK</a>
-                   <a href="#" class="tags">PAYOUT</a>
-                   <a href="#" class="tags">STEEMIT</a>
-
-                 </div>
-
-             </div>
-
-             <div class="clearfix"></div>
-         </div>
-       </div>
-
-    </article>
+    @php
+        $tags = json_decode($post['json_metadata'], TRUE);
+        $tags = $tags['tags'];
+        $img = "https://steemitimages.com/u/".$post['author']."/avatar";
+        $post_url = "https://www.steemit.com/@".$post["author"]."/".$post["permlink"];
+        $author_url = "https://www.steemit.com/@".$post["author"];
+        $post_body = substr($post["body"],0,400).'...';
+        $post_title = substr($post["title"],0,63).'...';
+        $price = str_replace(" SBD", "", $post["pending_payout_value"]);
+        $img = "https://steemitimages.com/u/".$post['author']."/avatar";
+        $tags = json_decode($post['json_metadata'], TRUE);
+        $tags = $tags['tags'];
+        $pending_payout = floatval($post['pending_payout_value']);
+        $paid_out = floatval($post['total_payout_value']) + floatval($post['curator_payout_value']) ;
+    @endphp
 
     <article class="question question-type-normal">
-      <div class="span-top">
-
-      </div>
+      <div class="span-top"></div>
 
       <div class="span-inner">
-        <h2 class="">
-            <a href="" class="question-a">Steem Power: What is the essence of powering up</a>
+        <h2 class="quest-h2">
+            <a href="" class="question-a">{{ $post_title }}</a>
         </h2>
 
         <div class="question-inner">
             <div class="clearfix"></div>
             <p class="question-desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              {{ $post_body }}
             </p>
 
             <div class="">
-                <img src="/img/me.jpg" alt="profile-img" class="profile-img-dashboard img-responsive">
-                <h4 class="username-dashboard">profchydon</h4>
-                <h5 class="time-dashboard"> -  12 hours ago</h5>
-                <h5 class="comment-count"><i class="fa fa-comment" aria-hidden="true"></i> 12</h5>
+                <img src="{{ $img }}" alt="profile-img" class="profile-img-dashboard img-responsive">
+                <h4 class="username-dashboard"> {{ $post["author"] }} </h4>
+                <h5 class="time-dashboard"> </h5>
+                <h5 class="comment-count"><i class="fa fa-comment" aria-hidden="true"></i> {{ $post["children"] }}</h5>
 
-                <h5 class="upvote-count"><i class="fa fa-heart" aria-hidden="true"></i> 33</h5>
+                <h5 class="upvote-count"><i class="fa fa-heart" aria-hidden="true"></i> {{ $post["net_votes"] }}</h5>
 
-                <h5 class="payout-dashboard"> $20.34</h5>
+                <h5 class="payout-dashboard">
+
+                    @if ( $pending_payout && $pending_payout != "0.00" )
+
+                        ${{ $pending_payout }}
+
+                    @else
+
+                        ${{ $paid_out }}
+
+                    @endif
+
+                </h5>
 
                 <div class="tags-block pull-right">
-                  <a href="#" class="tags">STEEMANSWER</a>
-                  <a href="#" class="tags">PAYOUT</a>
-                  <a href="#" class="tags">STEEMIT</a>
+
+                  @foreach ($tags as $tag)
+
+                      <a href="/{{ $tag }}" class="tags">{{ $tag }}</a>
+
+                  @endforeach
 
                 </div>
 
             </div>
 
-            <div class="clearfix"></div>
+            <div class="clearfix" id="clear"></div>
         </div>
-      </div>
-
-      <div class="span-top">
-
       </div>
 
    </article>
 
-   <!-- <form class="form-group">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input name="title" class="form-control" type="text" placeholder="Title?" />
-    </div>
-    <div class="form-group">
-      <textarea name="content" class="form-control" data-provide="markdown" rows="10"></textarea>
-    </div>
-
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form> -->
-
+    @endforeach
 
     </section>

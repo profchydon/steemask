@@ -77,6 +77,15 @@ public function getUserCommentData ($username)
 
 }
 
+public function getDiscussionsByCreated()
+{
+    $query = urlencode('{"tag":"steemask", "limit": "100"}');
+    $url = 'https://api.steemjs.com/get_discussions_by_created?query='.$query;
+    $json= file_get_contents($url);
+    $data = json_decode($json,true);
+    return $data;
+}
+
 
 
 
