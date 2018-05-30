@@ -83,6 +83,22 @@ p.about-p {
     position: relative;
 }
 
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #337ab7;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    animation: spin 2s linear infinite;
+    text-align: center;
+    display: -webkit-inline-box;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 textarea.form-control {
     resize: none;
 }
