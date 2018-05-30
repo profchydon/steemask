@@ -54,27 +54,6 @@
 <script type="text/javascript">
 
 
-steem.broadcast.vote(wif, voter, author, permlink, weight, function(err, result) {
-  console.log(err, result);
-});
-
-
-
-
-
-// jQuery
-if ( $('.pagination__next').length ) {
-
-  $('.load').infiniteScroll({
-
-    path: '.pagination__next',
-    append: '.question-type-normal',
-    history: false,
-
-  });
-
-}
-
 
 $('#myTabs a').click(function (e) {
   e.preventDefault()

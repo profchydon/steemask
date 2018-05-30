@@ -26,8 +26,6 @@ class UsersController extends Controller
 
         $data['user'] = $this->user->steemConnect();
 
-        $data['posts'] = $this->user->getDiscussionsByCreated();
-
         $data['coinmarketcap'] = $this->coinmarketcap->getAllCoinDetails();
 
         $_SESSION['username'] = $data['user']['user'];
@@ -47,8 +45,6 @@ class UsersController extends Controller
         $_SESSION['sbd_balance'] = $data['user']['account']['sbd_balance'];
         $_SESSION['savings_sbd_balance'] = $data['user']['account']['savings_sbd_balance'];
         $_SESSION['witness_votes'] = $data['user']['account']['witness_votes'];
-
-
 
         return view ('home' , $data);
 
