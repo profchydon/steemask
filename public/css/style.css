@@ -94,6 +94,18 @@ p.about-p {
     display: -webkit-inline-box;
 }
 
+div, section, article {
+    word-wrap: break-word !important;
+}
+
+.question-inner img {
+    display: none;
+}
+
+p.question-desc {
+    padding-bottom: 10px !important;
+}
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -419,6 +431,10 @@ footer a {
 
 
 @media (max-width:768px) {
+
+  .question-inner img {
+    max-width: 220px !important;
+  }
 
   .fixed-downtab {
     margin: 0px;

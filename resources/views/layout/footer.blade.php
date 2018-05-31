@@ -42,12 +42,8 @@
 
 <script src="/js/jquery.js"></script>
 <script src="/js/bootstrap.min.js"></script>
-<script src="/js/infinite-scroll.pkgd.min.js"></script>
-<script src="/js/markdown.js"></script>
-<script src="/js/to-markdown.js"></script>
-<script src="/js/bootstrap-markdown.js"></script>
-<script src="locale/bootstrap-markdown.fr.js"></script>
 <script src="//cdn.steemjs.com/lib/latest/steem.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js"></script>
 <script src="/js/main.js"></script>
 
 
