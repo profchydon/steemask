@@ -73,16 +73,16 @@
 
   <ul style="margin-right: 0px;" class="nav navbar-nav">
 
-    <li> <a href="http://signup.steemit.com" class="signup-a">Trending</a> </li>
-    <li> <a href="http://signup.steemit.com" class="signup-a">New</a> </li>
-    <li> <a href="http://signup.steemit.com" class="signup-a">Category</a> </li>
+    <li> <a href="#trending" class="signup-a" id="trending">Trending</a> </li>
+    <li> <a href="#new" class="signup-a" id="new">New</a> </li>
+    <li> <a href="#hot" class="signup-a" id="hot">Hot</a> </li>
     <li> <a href="http://signup.steemit.com" class="signup-a">Unaswered</a> </li>
 
   </ul>
 
   <ul style="margin-right: 0px;" class="nav navbar-nav navbar-right">
 
-    <li> <a href="http://signup.steemit.com" class="signup-a">Marketplace</a> </li>
+    <li> <a href="/market" class="signup-a">Marketplace</a> </li>
 
     @if (isset($_SESSION['username']))
 
